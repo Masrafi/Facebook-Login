@@ -24,10 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
           child: ElevatedButton(
             child: const Text("Login with Facebook"),
             onPressed: () async {
-              FacebookAuth.instance.login(
+              FacebookAuth.instance.login(//send request to facebook
                   permissions: ["public_profile", "email"]).then((value) {
                 FacebookAuth.instance.getUserData().then((userData) async {
-                  _userObj = userData;
+                  _userObj = userData; //map data store here & send next screen
                   Navigator.push(
                       context,
                       MaterialPageRoute(
